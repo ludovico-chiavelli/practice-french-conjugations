@@ -1,9 +1,11 @@
-import { Navbar } from "./components"
+import './App.css'
+
+import { Container } from "./components"
 
 export default function App() {
   return (
-    <div>
-      <Navbar/>
+    <div className='App'>
+      <Container/>
     </div>
   )
 }

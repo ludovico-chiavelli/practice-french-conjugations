@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { Checkbox } from "./Checkbox";
 
-export const OptButton = ({ tenses, title, children }) => {
+export const OptButton = ({ tenses, title }) => {
     const [show, setShow] = useState(false);
     const [checks, setChecks] = useState(Object.fromEntries(tenses.map(tense => [tense, false])));
 
@@ -10,6 +10,21 @@ export const OptButton = ({ tenses, title, children }) => {
         console.log(checks)
         const value = !checks[cbID]
         setChecks({...checks, [cbID]: value})
+    }
+
+    const blurb = () => {
+        let selected = ""
+        Object.keys(checks).forEach(tense => {
+            if (checks[tense]) {
+                selected = selected + tense + " "
+            }
+        })
+
+        return(
+            <p className="w-full text-left overflow-hidden text-ellipsis">
+                {selected}
+            </p>
+        )
     }
 
     const tensesItems = tenses.map((tense) => 
@@ -20,7 +35,7 @@ export const OptButton = ({ tenses, title, children }) => {
         <div>
             <button className="h-20 w-full ring-2 ring-[#197278]/30 rounded-md px-4 py-2" onClick={() => setShow(!show)}>
                 <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
-                <p className="w-full text-left overflow-hidden text-ellipsis">{children}</p>
+                {blurb()}
             </button>
             {
                 show && 

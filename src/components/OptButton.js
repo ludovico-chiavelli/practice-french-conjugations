@@ -21,7 +21,7 @@ export const OptButton = ({ tenses, title }) => {
         })
 
         return(
-            <p className="h- max-w-full text-left overflow-hidden whitespace-nowrap text-ellipsis">
+            <p className="h- max-w-full text-left overflow-hidden whitespace-nowrap text-ellipsis text-black/40">
                 {selected}
             </p>
         )

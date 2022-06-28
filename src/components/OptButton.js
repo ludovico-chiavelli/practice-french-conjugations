@@ -21,7 +21,7 @@ export const OptButton = ({ tenses, title }) => {
         })
 
         return(
-            <p className="w-full text-left overflow-hidden text-ellipsis">
+            <p className="h- max-w-full text-left overflow-hidden whitespace-nowrap text-ellipsis">
                 {selected}
             </p>
         )
@@ -33,7 +33,7 @@ export const OptButton = ({ tenses, title }) => {
 
     return(
         <div>
-            <button className="h-20 w-full ring-2 ring-[#197278]/30 rounded-md px-4 py-2" onClick={() => setShow(!show)}>
+            <button className="h-14 w-full ring-2 ring-[#197278]/30 rounded-md px-4 py-2" onClick={() => setShow(!show)}>
                 <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
                 {blurb()}
             </button>

@@ -1,11 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 
-export const Checkbox = ({ tense }) => {
-    const [checked, setChecked] = useState(false);
-
+export const Checkbox = ({ checked, tense, onChange }) => {
     return(
-        <div className="w-full px-2 py-1 hover:bg-[#197278]/50" onClick={() => setChecked(!checked)} key={tense}>
-            <input type="checkbox" id={tense} checked={checked}/>
+        <div className="w-full px-2 py-1 hover:bg-[#197278]/50" onClick={() => onChange(tense)} key={tense}>
+            <input type="checkbox" id={tense} checked={checked} readOnly/>
             <label htmlFor={tense} className="ml-2">{tense}</label>
         </div>
     )

@@ -4,9 +4,16 @@ import { Checkbox } from "./Checkbox";
 
 export const OptButton = ({ tenses, title, children }) => {
     const [show, setShow] = useState(false);
+    const [checks, setChecks] = useState(Object.fromEntries(tenses.map(tense => [tense, false])));
+
+    const handleOptionChange = (cbID) => {
+        console.log(checks)
+        const value = !checks[cbID]
+        setChecks({...checks, [cbID]: value})
+    }
 
     const tensesItems = tenses.map((tense) => 
-        <Checkbox tense={tense}/>
+        <Checkbox checked={checks[tense]}  tense={tense} onChange={handleOptionChange}/>
     )
 
     return(

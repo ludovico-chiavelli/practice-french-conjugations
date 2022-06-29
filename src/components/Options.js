@@ -25,7 +25,7 @@ export const Options = () => {
         <section className="w-4/5 md:max-w-4xl">
             <h1>Conjugation Drill</h1>
             <OptButton title="Tenses" options={tenses}/>
-            <OptButton title="Tenses" options={categories}/>
+            <OptButton title="Categories" options={categories}/>
         </section>
     )
 }

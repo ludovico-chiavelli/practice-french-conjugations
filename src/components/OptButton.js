@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { MenuOverlay } from "./MenuOverlay";
+import { MobileMenuOverlay } from "./MobileMenuOverlay";
 
 export const OptButton = ({ tenses, title }) => {
     const [show, setShow] = useState(false);
@@ -38,7 +38,7 @@ export const OptButton = ({ tenses, title }) => {
                 {blurb()}
             </button>
             {
-                show && <MenuOverlay onClick={handleButtonClick} tenses={tenses} onOptionChange={handleOptionChange} checks={checks}/>
+                show && <MobileMenuOverlay onClick={handleButtonClick} tenses={tenses} onOptionChange={handleOptionChange} checks={checks}/>
             }
         </div>
     )

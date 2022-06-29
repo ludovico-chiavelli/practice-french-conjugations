@@ -4,7 +4,7 @@ import { DeskMenuOverlay, MobileMenuOverlay, Checkbox } from "./";
 
 export const OptButton = ({ options, title }) => {
     const [show, setShow] = useState(false);
-    const [checks, setChecks] = useState(Object.fromEntries(options.map(tense => [tense, false])));
+    const [checks, setChecks] = useState(Object.fromEntries(options.map(item => [item, false])));
     const [isDesktop, setIsDesktop] = useState(false)
 
     useEffect(() => {
@@ -32,25 +32,25 @@ export const OptButton = ({ options, title }) => {
         if (show) {
             if (isDesktop) {
                 return(
-                    <DeskMenuOverlay tensesItems={tensesItems}/>
+                    <DeskMenuOverlay items={items}/>
                 )
             } else {
                 return(
-                    <MobileMenuOverlay onClick={handleButtonClick} tensesItems={tensesItems} onOptionChange={handleOptionChange} checks={checks}/>
+                    <MobileMenuOverlay onClick={handleButtonClick} items={items} onOptionChange={handleOptionChange} checks={checks}/>
                 )
             }
         }
     }
 
-    const tensesItems = options.map((tense) => 
-        <Checkbox checked={checks[tense]}  tense={tense} onChange={handleOptionChange}/>
+    const items = options.map((item) => 
+        <Checkbox checked={checks[item]}  item={item} onChange={handleOptionChange}/>
     )
 
     const blurb = () => {
         let selected = ""
-        Object.keys(checks).forEach(tense => {
-            if (checks[tense]) {
-                selected = selected + tense + " "
+        Object.keys(checks).forEach(item => {
+            if (checks[item]) {
+                selected = selected + item + " "
             }
         })
 

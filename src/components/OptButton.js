@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react"
 
 import { DeskMenuOverlay, MobileMenuOverlay, Checkbox } from "./";
 
-export const OptButton = ({ tenses, title }) => {
+export const OptButton = ({ options, title }) => {
     const [show, setShow] = useState(false);
-    const [checks, setChecks] = useState(Object.fromEntries(tenses.map(tense => [tense, false])));
+    const [checks, setChecks] = useState(Object.fromEntries(options.map(tense => [tense, false])));
     const [isDesktop, setIsDesktop] = useState(false)
 
     useEffect(() => {
@@ -42,7 +42,7 @@ export const OptButton = ({ tenses, title }) => {
         }
     }
 
-    const tensesItems = tenses.map((tense) => 
+    const tensesItems = options.map((tense) => 
         <Checkbox checked={checks[tense]}  tense={tense} onChange={handleOptionChange}/>
     )
 

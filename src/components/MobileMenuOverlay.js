@@ -1,11 +1,6 @@
 import React from "react";
 
-import { Checkbox } from "./Checkbox";
-
-export const MobileMenuOverlay = ( { onClick, onOptionChange, tenses, checks } ) => {
-    const tensesItems = tenses.map((tense) => 
-        <Checkbox checked={checks[tense]}  tense={tense} onChange={onOptionChange}/>
-    )
+export const MobileMenuOverlay = ( { onClick, tensesItems } ) => {
 
     return(
         <div className="fixed inset-0 bg-black bg-opacity-50" onClick={onClick}>

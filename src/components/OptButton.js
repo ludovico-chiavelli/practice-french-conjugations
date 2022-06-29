@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { MobileMenuOverlay } from "./MobileMenuOverlay";
+import { MobileMenuOverlay, Checkbox } from "./";
 
 export const OptButton = ({ tenses, title }) => {
     const [show, setShow] = useState(false);
@@ -15,6 +15,10 @@ export const OptButton = ({ tenses, title }) => {
     const handleButtonClick = () => {
         setShow(!show)
     }
+
+    const tensesItems = tenses.map((tense) => 
+        <Checkbox checked={checks[tense]}  tense={tense} onChange={handleOptionChange}/>
+    )
 
     const blurb = () => {
         let selected = ""
@@ -38,7 +42,7 @@ export const OptButton = ({ tenses, title }) => {
                 {blurb()}
             </button>
             {
-                show && <MobileMenuOverlay onClick={handleButtonClick} tenses={tenses} onOptionChange={handleOptionChange} checks={checks}/>
+                show && <MobileMenuOverlay onClick={handleButtonClick} tensesItems={tensesItems} onOptionChange={handleOptionChange} checks={checks}/>
             }
         </div>
     )

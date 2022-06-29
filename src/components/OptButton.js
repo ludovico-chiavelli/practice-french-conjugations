@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { Checkbox } from "./Checkbox";
+import { MenuOverlay } from "./MenuOverlay";
 
 export const OptButton = ({ tenses, title }) => {
     const [show, setShow] = useState(false);
@@ -10,6 +10,10 @@ export const OptButton = ({ tenses, title }) => {
         console.log(checks)
         const value = !checks[cbID]
         setChecks({...checks, [cbID]: value})
+    }
+
+    const handleButtonClick = () => {
+        setShow(!show)
     }
 
     const blurb = () => {
@@ -27,10 +31,6 @@ export const OptButton = ({ tenses, title }) => {
         )
     }
 
-    const tensesItems = tenses.map((tense) => 
-        <Checkbox checked={checks[tense]}  tense={tense} onChange={handleOptionChange}/>
-    )
-
     return(
         <div>
             <button className="h-16 w-full ring-2 ring-[#197278]/30 rounded-md px-4 py-2 flex flex-col justify-between" onClick={() => setShow(!show)}>
@@ -38,12 +38,7 @@ export const OptButton = ({ tenses, title }) => {
                 {blurb()}
             </button>
             {
-                show && 
-                <div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setShow(!show)}>
-                    <div className="fixed h-52 inset-x-0 bottom-0 rounded-t-md bg-[#EDDDD4] overflow-scroll" onClick={(e) => {e.stopPropagation();}}>
-                        {tensesItems}
-                    </div>
-                </div>
+                show && <MenuOverlay onClick={handleButtonClick} tenses={tenses} onOptionChange={handleOptionChange} checks={checks}/>
             }
         </div>
     )

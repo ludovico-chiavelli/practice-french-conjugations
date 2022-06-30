@@ -15,7 +15,6 @@ export const OptBtn = ({ options, blurb, children, btnType }) => {
     })
 
     const handleOptionChange = (cbID) => {
-        console.log(checks)
         const value = !checks[cbID]
         setChecks({...checks, [cbID]: value})
     }

@@ -2,10 +2,10 @@ import React from "react";
 
 import { OptBtn } from ".";
 
-export const RadioDDBtn = ({ options, title }) => {
-    const blurb = () => {
+export const RadioDDBtn = ({ options }) => {
+    const blurb = (selected) => {
         return(
-            <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
+            <h3 className="w-full text-left text-[#197278] text-base font-bold">{selected}</h3>
         )
     }
 

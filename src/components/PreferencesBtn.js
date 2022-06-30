@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 
-import { DeskMenuOverlay, MobileMenuOverlay, Checkbox } from "./";
+import { DeskMenuOverlay, MobileMenuOverlay, Checkbox } from ".";
 
-export const OptButton = ({ options, title }) => {
+export const PreferencesBtn = ({ options, title }) => {
     const [show, setShow] = useState(false);
     const [checks, setChecks] = useState(Object.fromEntries(options.map(item => [item, false])));
     const [isDesktop, setIsDesktop] = useState(false)

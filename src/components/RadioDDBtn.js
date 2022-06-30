@@ -10,6 +10,6 @@ export const RadioDDBtn = ({ options, title }) => {
     }
 
     return(
-        <OptBtn blurb={blurb} options={options} btnType="selection"/>
+        <OptBtn blurb={blurb} options={options} btnType="radio"/>
     )
 }

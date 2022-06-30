@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import { DeskMenuOverlay, MobileMenuOverlay, Checkbox } from ".";
+import { DeskMenuOverlay, MobileMenuOverlay, Radio } from ".";
 
 export const RadioBtn = ({ options, title }) => {
     const [show, setShow] = useState(false);
@@ -43,7 +43,7 @@ export const RadioBtn = ({ options, title }) => {
     }
 
     const items = options.map((item) => 
-        <Checkbox checked={checks[item]}  item={item} onChange={handleOptionChange}/>
+        <Radio item={item} onChange={handleOptionChange}/>
     )
 
     const blurb = () => {

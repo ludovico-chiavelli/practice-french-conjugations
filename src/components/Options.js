@@ -1,7 +1,6 @@
 import React from "react";
-import { RadioBtn } from ".";
 
-import { PreferencesBtn } from "./PreferencesBtn";
+import { PreferencesBtn, RadioBtn } from ".";
 
 export const Options = () => {
     const tenses = [

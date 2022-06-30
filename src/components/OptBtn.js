@@ -45,7 +45,7 @@ export const OptBtn = ({ options, blurb, children, btnType }) => {
         if (btnType === "selection") {
             return <Checkbox checked={checks[item]}  item={item} onChange={handleOptionChange}/>
         } else {
-            return <Radio checked={checks[item]}  item={item} onChange={handleOptionChange}/>
+            return <Radio item={item} onChange={handleOptionChange}/>
         }
     }
     )

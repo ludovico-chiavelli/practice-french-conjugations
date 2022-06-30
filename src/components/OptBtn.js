@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 
-import { DeskMenuOverlay, MobileMenuOverlay, Checkbox } from ".";
+import { DeskMenuOverlay, MobileMenuOverlay, Checkbox, Radio } from ".";
 
-export const OptBtn = ({ options, blurb, children }) => {
+export const OptBtn = ({ options, blurb, children, btnType }) => {
     const [show, setShow] = useState(false);
     const [checks, setChecks] = useState(Object.fromEntries(options.map(item => [item, false])));
     const [isDesktop, setIsDesktop] = useState(false)
@@ -42,8 +42,13 @@ export const OptBtn = ({ options, blurb, children }) => {
         }
     }
 
-    const items = options.map((item) => 
-        <Checkbox checked={checks[item]}  item={item} onChange={handleOptionChange}/>
+    const items = options.map((item) => {
+        if (btnType === "selection") {
+            return <Checkbox checked={checks[item]}  item={item} onChange={handleOptionChange}/>
+        } else {
+            return <Radio checked={checks[item]}  item={item} onChange={handleOptionChange}/>
+        }
+    }
     )
 
     return(

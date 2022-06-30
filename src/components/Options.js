@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SelectionBtn } from "./SelectionBtn";
+import { SelectionBtn, RadioDDBtn } from "./";
 
 export const Options = () => {
     const tenses = [
@@ -45,7 +45,7 @@ export const Options = () => {
             </div>
             <div className="w-32 mt-10">
                 <h3>Verbs</h3>
-                <SelectionBtn title="All Verbs" options={selectionOfVerbs} hasBlurb={false}/>
+                <RadioDDBtn title="All Verbs" options={selectionOfVerbs} hasBlurb={false}/>
             </div>
         </section>
     )

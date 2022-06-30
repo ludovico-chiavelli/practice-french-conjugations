@@ -19,7 +19,7 @@ export const SelectionBtn = ({ options, title }) => {
     }
 
     return(
-        <OptBtn blurb={blurb} options={options}>
+        <OptBtn blurb={blurb} options={options} btnType="selection">
             <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
         </OptBtn>
     )

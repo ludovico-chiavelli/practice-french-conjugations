@@ -45,7 +45,7 @@ export const Options = () => {
             </div>
             <div className="w-32 mt-10">
                 <h3>Verbs</h3>
-                <RadioDDBtn title="All Verbs" options={selectionOfVerbs} hasBlurb={false}/>
+                <RadioDDBtn options={selectionOfVerbs}/>
             </div>
         </section>
     )

@@ -1,4 +1,5 @@
 import React from "react";
+import { RadioBtn } from ".";
 
 import { PreferencesBtn } from "./PreferencesBtn";
 
@@ -45,7 +46,7 @@ export const Options = () => {
             </div>
             <div className="w-32 mt-10">
                 <h3>Verbs</h3>
-                <PreferencesBtn title="All Verbs" options={selectionOfVerbs} hasBlurb={false}/>
+                <RadioBtn options={selectionOfVerbs}/>
             </div>
         </section>
     )

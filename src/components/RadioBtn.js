@@ -15,7 +15,6 @@ export const RadioBtn = ({ options, title }) => {
     })
 
     const handleOptionChange = (cbID) => {
-        console.log(checks)
         const value = !checks[cbID]
         setChecks({...checks, [cbID]: value})
     }

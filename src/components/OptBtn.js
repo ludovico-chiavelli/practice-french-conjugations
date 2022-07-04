@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Dropdown } from "./";
+import { BtnContent, Dropdown } from "./";
 
 export const OptBtn = ({ title, options }) => {
     const [show, setShow] = useState(false);
@@ -13,9 +13,9 @@ export const OptBtn = ({ title, options }) => {
         <div className="sm:relative first:mt-4 my-4">
             <button className="h-16 w-full ring-2 ring-[#197278]/30 rounded-md px-4 py-2 flex flex-col justify-between" onClick={handleClick}>
                 <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
-                {blurb()}
+                <BtnContent/>
             </button>
-            <Dropdown items={options} show={show} onClick={handleClick}/>
+            <Dropdown options={options} show={show} onClick={handleClick}/>
         </div>
     )
 }

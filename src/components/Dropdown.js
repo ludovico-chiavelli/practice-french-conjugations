@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 
-export const Dropdown = ({ show }) => {
+export const Dropdown = ({ items, show, onClick }) => {
     const [isDesktop, setIsDesktop] = useState(false)
 
     useEffect(() => {

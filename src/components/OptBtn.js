@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Dropdown } from "./";
 
-export const OptBtn = () => {
+export const OptBtn = ({ title, options }) => {
     const [show, setShow] = useState(false);
 
     const handleClick = () => {
@@ -15,7 +15,7 @@ export const OptBtn = () => {
                 <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
                 {blurb()}
             </button>
-            <Dropdown show={show}/>
+            <Dropdown items={options} show={show} onClick={handleClick}/>
         </div>
     )
 }

@@ -15,7 +15,7 @@ export const OptBtn = ({ title, options }) => {
                 <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
                 <BtnContent/>
             </button>
-            <Dropdown options={options} show={show} onClick={handleClick}/>
+            { show && <Dropdown options={options} show={show} onClick={handleClick}/>}
         </div>
     )
 }

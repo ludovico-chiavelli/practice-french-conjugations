@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { Dropdown } from "./";
+
 export const OptBtn = () => {
     const [show, setShow] = useState(false);
 
@@ -13,9 +15,7 @@ export const OptBtn = () => {
                 <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
                 {blurb()}
             </button>
-            {
-                chooseMenu() 
-            }
+            <Dropdown show={show}/>
         </div>
     )
 }

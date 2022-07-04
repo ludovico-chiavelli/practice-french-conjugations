@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { BtnContent, Dropdown } from "./";
+import { BtnContent, Dropdown } from ".";
 
-export const OptBtn = ({ title, options }) => {
+export const PreferencesBtn = ({ title, options }) => {
     const [show, setShow] = useState(false);
     const [checks, setChecks] = useState(Object.fromEntries(options.map(option => [option, false])));
 

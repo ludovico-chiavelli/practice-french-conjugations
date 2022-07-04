@@ -1,6 +1,6 @@
 import React from "react";
 
-import { OptBtn } from ".";
+import { PreferencesBtn } from ".";
 
 export const Options = () => {
     const tenses = [
@@ -39,9 +39,9 @@ export const Options = () => {
         <section className="w-4/5 md:max-w-4xl">
             <div>
                 <h1>Conjugation Drill</h1>
-                <OptBtn title="Tenses" options={tenses}/>
-                <OptBtn title="Categories" options={categories}/>
-                <OptBtn title="Pronouns" options={pronouns}/>
+                <PreferencesBtn title="Tenses" options={tenses}/>
+                <PreferencesBtn title="Categories" options={categories}/>
+                <PreferencesBtn title="Pronouns" options={pronouns}/>
             </div>
             <div className="w-32 mt-10">
                 <h3>Verbs</h3>

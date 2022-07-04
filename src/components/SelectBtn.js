@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const VerbsBtn = ({ options }) => {
+export const SelectBtn = ({ options }) => {
     const [sValue, setSValue] = useState(options[0])
 
     const items = options.map((option) => <option value={option}>{option}</option>)

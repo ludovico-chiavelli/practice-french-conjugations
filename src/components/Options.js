@@ -43,7 +43,7 @@ export const Options = () => {
                 <PreferencesBtn title="Categories" options={categories}/>
                 <PreferencesBtn title="Pronouns" options={pronouns}/>
             </div>
-            <div className="w-32 mt-10">
+            <div className="mt-10">
                 <h3>Verbs</h3>
                 <VerbsBtn options={selectionOfVerbs}/>
             </div>

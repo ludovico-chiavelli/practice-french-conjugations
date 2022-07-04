@@ -6,8 +6,8 @@ export const VerbsBtn = ({ options }) => {
     const items = options.map((option) => <option value={option}>{option}</option>)
 
     return(
-        <selection value={sValue}>
+        <select value={sValue}>
             {items}
-        </selection>
+        </select>
     )
 }

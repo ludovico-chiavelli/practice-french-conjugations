@@ -35,6 +35,13 @@ export const Options = () => {
         "Most common verbs"
     ]
 
+    const numWords = [
+        "10",
+        "20",
+        "40",
+        "100"
+    ]
+
     return(
         <section className="w-4/5 md:max-w-4xl">
             <div>
@@ -45,7 +52,7 @@ export const Options = () => {
             </div>
             <div className="mt-10">
                 <h3>Verbs</h3>
-                <VerbsBtn options={selectionOfVerbs}/>
+                <SelectBtn options={selectionOfVerbs}/>
             </div>
             <div className="mt-10">
                 <h3>Length</h3>

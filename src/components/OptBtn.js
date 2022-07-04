@@ -4,9 +4,15 @@ import { BtnContent, Dropdown } from "./";
 
 export const OptBtn = ({ title, options }) => {
     const [show, setShow] = useState(false);
+    const [checks, setChecks] = useState(Object.fromEntries(options.map(option => [option, false])));
 
     const handleClick = () => {
         setShow(!show)
+    }
+
+    const handleOptionChange = (cbID) => {
+        const value = !checks[cbID]
+        setChecks({...checks, [cbID]: value})
     }
 
     return(
@@ -15,7 +21,7 @@ export const OptBtn = ({ title, options }) => {
                 <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
                 <BtnContent/>
             </button>
-            { show && <Dropdown options={options} show={show} onClick={handleClick}/>}
+            { show && <Dropdown options={options} show={show} onClick={handleClick} checks={checks} onOptionChange={handleOptionChange}/>}
         </div>
     )
 }

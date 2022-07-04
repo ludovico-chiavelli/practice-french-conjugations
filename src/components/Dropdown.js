@@ -1,10 +1,12 @@
 import React, { useState,useEffect } from "react";
 
-export const Dropdown = ({ options, show, onClick }) => {
+import { Checkbox } from "./";
+
+export const Dropdown = ({ options, checks, show, onClick, onOptionChange }) => {
     const [isDesktop, setIsDesktop] = useState(false)
 
-    const items = options.map((option) => 
-        <option value={option}>{option}</option>
+    const items = options.map((item) => 
+        <Checkbox checked={checks[item]}  item={item} onOptionChange={onOptionChange}/>
     )
 
     useEffect(() => {
@@ -22,18 +24,14 @@ export const Dropdown = ({ options, show, onClick }) => {
         if (show && isDesktop) {
             return(
                 <div className="absolute h-40 w-full z-10 mt-2 rounded-md bg-[#EDDDD4] drop-shadow-lg overflow-scroll ring-1">
-                    <select>
-                        {items}
-                    </select>
+                    {items}
                 </div>
             ) 
         } else {
             return(
                 <div className="fixed inset-0 bg-black bg-opacity-50" onClick={onClick}>
                     <div className="fixed h-52 inset-x-0 bottom-0 rounded-t-md bg-[#EDDDD4] overflow-scroll" onClick={(e) => {e.stopPropagation();}}>
-                        <select>
-                            {items}
-                        </select>
+                        {items}
                     </div>
                 </div>
             )

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { PreferencesBtn } from ".";
+import { PreferencesBtn, VerbsBtn } from ".";
 
 export const Options = () => {
     const tenses = [
@@ -45,6 +45,7 @@ export const Options = () => {
             </div>
             <div className="w-32 mt-10">
                 <h3>Verbs</h3>
+                <VerbsBtn options={selectionOfVerbs}/>
             </div>
         </section>
     )

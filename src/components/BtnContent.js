@@ -7,11 +7,14 @@ export const BtnContent = ({ checks }) => {
             selected = selected + item + " "
         }
     })
-
-    return(
-        <p className="max-w-full text-left overflow-hidden whitespace-nowrap text-ellipsis text-black/40">
-            {selected}
-        </p>
-    )
+    if (selected) {
+        return(
+            <p className="max-w-full text-left overflow-hidden whitespace-nowrap text-ellipsis text-black/40">
+                {selected}
+            </p>
+        )
+    } else {
+        return null
+    }
 
 }

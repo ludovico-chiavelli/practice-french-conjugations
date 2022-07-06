@@ -54,7 +54,7 @@ export const Options = () => {
                 <h3>Verbs</h3>
                 <SelectBtn options={selectionOfVerbs}/>
             </div>
-            <div className="mt-10">
+            <div className="my-10">
                 <h3>Length</h3>
                 <SelectBtn options={numWords}/>
             </div>

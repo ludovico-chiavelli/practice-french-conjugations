@@ -23,7 +23,7 @@ export const Dropdown = ({ options, checks, show, onClick, onOptionChange }) => 
     const chooseMenu = () => {
         if (show && isDesktop) {
             return(
-                <div className="absolute h-40 w-full z-10 mt-2 rounded-md bg-[#EDDDD4] drop-shadow-lg overflow-scroll ring-1">
+                <div className="absolute h-40 w-full z-10 mt-2 rounded-md bg-[#EDDDD4] drop-shadow-lg overflow-y-scroll ring-1">
                     {items}
                 </div>
             ) 

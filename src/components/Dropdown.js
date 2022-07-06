@@ -3,7 +3,7 @@ import React, { useState,useEffect } from "react";
 import { Checkbox } from "./";
 
 export const Dropdown = ({ options, checks, show, onClick, onOptionChange }) => {
-    const [isDesktop, setIsDesktop] = useState(false)
+    const [isDesktop, setIsDesktop] = useState(true)
 
     const items = options.map((item) => 
         <Checkbox checked={checks[item]}  item={item} onOptionChange={onOptionChange}/>

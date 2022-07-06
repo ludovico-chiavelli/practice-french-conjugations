@@ -45,7 +45,7 @@ export const Options = () => {
     return(
         <section className="h-full w-4/5 md:max-w-4xl">
             <div>
-                <h1>Conjugation Drill</h1>
+                <h1 className="my-10 text-4xl text-center">Conjugation Drill</h1>
                 <PreferencesBtn title="Tenses" options={tenses}/>
                 <PreferencesBtn title="Categories" options={categories}/>
                 <PreferencesBtn title="Pronouns" options={pronouns}/>

@@ -5,7 +5,7 @@ import {
     Route,
   } from "react-router-dom";
 
-import { Navbar, Options } from "./"
+import { Navbar, Options, Exercise } from "./"
 
 export const Container = () => {
     return(
@@ -14,9 +14,7 @@ export const Container = () => {
             <div className="h-5/6 flex justify-center">
                 <div className="w-3/4  max-w-3xl mt-10 rounded-md flex justify-center items-center bg-[#EDDDD4] overflow-y-auto">
                     <Switch>
-                        <Route path="/drill">
-                            <p>dab</p>
-                        </Route>
+                        <Route path="/exercise" component={Exercise}/>
                         <Route path="/" component={Options}/>
                     </Switch>
                 </div>

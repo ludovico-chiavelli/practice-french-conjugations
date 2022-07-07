@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import { PreferencesBtn, SelectBtn } from ".";
 
 export const Options = () => {
@@ -58,6 +60,7 @@ export const Options = () => {
                 <h3>Length</h3>
                 <SelectBtn options={numWords}/>
             </div>
+            <Link to="/drill">Start drill</Link>
         </section>
     )
 }

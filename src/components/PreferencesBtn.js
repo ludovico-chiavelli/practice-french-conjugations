@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { observer } from "mobx-react-lite";
 
 import { BtnContent, Dropdown } from ".";
 
-export const PreferencesBtn = ({ type, options }) => {
+export const PreferencesBtn = observer(({ type, checks, options }) => {
     const [show, setShow] = useState(false);
-    const [checks, setChecks] = useState(Object.fromEntries(options.map(option => [option, false])));
 
     const title = type[0] + type.slice(1).toLowerCase()
 
     const handleClick = () => {
         setShow(!show)
-    }
-
-    const handleOptionChange = (cbID) => {
-        const value = !checks[cbID]
-        setChecks({...checks, [cbID]: value})
     }
 
     return(
@@ -23,7 +18,7 @@ export const PreferencesBtn = ({ type, options }) => {
                 <h3 className="w-full text-left text-[#197278] text-base font-bold">{title}</h3>
                 <BtnContent checks={checks}/>
             </button>
-            { show && <Dropdown options={options} show={show} onClick={handleClick} checks={checks} onOptionChange={handleOptionChange}/>}
+            { show && <Dropdown options={options} show={show} onClick={handleClick} checks={checks} type={type}/>}
         </div>
     )
-}
+})

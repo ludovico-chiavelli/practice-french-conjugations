@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 import { BtnContent, Dropdown } from ".";
 
-export const PreferencesBtn = ({ title, options }) => {
+export const PreferencesBtn = ({ type, options }) => {
     const [show, setShow] = useState(false);
     const [checks, setChecks] = useState(Object.fromEntries(options.map(option => [option, false])));
+
+    const title = type[0] + type.slice(1).toLowerCase()
 
     const handleClick = () => {
         setShow(!show)

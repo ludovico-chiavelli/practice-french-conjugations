@@ -12,9 +12,9 @@ export const Options = () => {
         <section className="h-full w-4/5 md:max-w-4xl">
             <div>
                 <h1 className="my-10 text-4xl text-center">Conjugation Drill</h1>
-                <PreferencesBtn title="Tenses" options={Object.keys(drillOptions.tenses)}/>
-                <PreferencesBtn title="Categories" options={Object.keys(drillOptions.categories)}/>
-                <PreferencesBtn title="Pronouns" options={Object.keys(drillOptions.pronouns)}/>
+                <PreferencesBtn type="TENSES" options={Object.keys(drillOptions.tenses)}/>
+                <PreferencesBtn type="CATEGORIES" options={Object.keys(drillOptions.categories)}/>
+                <PreferencesBtn type="PRONOUNS" options={Object.keys(drillOptions.pronouns)}/>
             </div>
             <div className="mt-10">
                 <h3>Verbs</h3>

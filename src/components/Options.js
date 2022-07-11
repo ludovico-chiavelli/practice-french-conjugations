@@ -5,44 +5,6 @@ import { Link } from "react-router-dom";
 import { PreferencesBtn, SelectBtn } from ".";
 
 export const Options = () => {
-    const tenses = [
-        "Present", 
-        "Imperfect",
-        "Simple-past",
-        "Perfect-tense",
-        "Pluperfect",
-        "Conditional Present",
-        "Present Subjunctive",
-        "Imperect Subjunctive"
-    ]
-
-    const categories = [
-        "Regular ER",
-        "Regular IR",
-        "Regular RE",
-        "Stem-changing and Irregular",
-    ]
-
-    const pronouns = [
-        "Je",
-        "Tu",
-        "Il/Elle/On",
-        "Nous",
-        "Vous",
-        "Ils/Elles",
-    ]
-
-    const selectionOfVerbs = [
-        "All verbs",
-        "Most common verbs"
-    ]
-
-    const numWords = [
-        "10",
-        "20",
-        "40",
-        "100"
-    ]
 
     return(
         <section className="h-full w-4/5 md:max-w-4xl">

@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx"
 
-export class OptionsStore {
+class OptionsStore {
     tenses = {
         "Present": false,
         "Imperfect": false,
@@ -64,3 +64,7 @@ export class OptionsStore {
         setChecks({...checks, [cbID]: value})
     }
 }
+
+const drillOptions = new OptionsStore
+
+export default drillOptions

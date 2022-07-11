@@ -1,12 +1,13 @@
 import React, { useState,useEffect } from "react";
+import { observer } from "mobx-react-lite"
 
 import { Checkbox } from "./";
 
-export const Dropdown = ({ options, checks, show, onClick, onOptionChange }) => {
+export const Dropdown = observer(({ type, options, checks, show, onClick}) => {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 640)
 
     const items = options.map((item) => 
-        <Checkbox checked={checks[item]}  item={item} onOptionChange={onOptionChange}/>
+        <Checkbox checked={checks[item]}  item={item} type={type}/>
     )
 
     useEffect(() => {
@@ -43,4 +44,4 @@ export const Dropdown = ({ options, checks, show, onClick, onOptionChange }) => 
             { chooseMenu() }
         </div>
     )
-}
+})

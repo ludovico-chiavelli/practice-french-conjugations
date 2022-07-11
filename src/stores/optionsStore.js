@@ -59,9 +59,6 @@ class OptionsStore {
                 this.pronouns[cbID] = !this.pronouns[cbID]
                 break
         }
-
-        const value = !checks[cbID]
-        setChecks({...checks, [cbID]: value})
     }
 }
 

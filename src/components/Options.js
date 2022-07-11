@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext }from "react";
 
 import { Link } from "react-router-dom";
 
 import { PreferencesBtn, SelectBtn } from ".";
 
-import drillOptions from "../stores/optionsStore";
+import { OptionsContext } from "../App";
 
 export const Options = () => {
+    const drillOptions = useContext(OptionsContext)
 
     return(
         <section className="h-full w-4/5 md:max-w-4xl">

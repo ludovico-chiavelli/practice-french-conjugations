@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx"
 
-class Options {
+export class OptionsStore {
     tenses = {
         "Present": false,
         "Imperfect": false,

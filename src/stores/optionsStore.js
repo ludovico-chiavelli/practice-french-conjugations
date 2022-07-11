@@ -58,10 +58,12 @@ class OptionsStore {
             case "PRONOUNS":
                 this.pronouns[cbID] = !this.pronouns[cbID]
                 break
+            default:
+                break
         }
     }
 }
 
-const drillOptions = new OptionsStore
+const drillOptions = new OptionsStore()
 
 export default drillOptions

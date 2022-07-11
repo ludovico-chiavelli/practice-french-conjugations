@@ -1,6 +1,7 @@
 import React from "react";
+import { observer } from "mobx-react-lite";
 
-export const BtnContent = ({ checks }) => {
+export const BtnContent = observer(({ checks }) => {
     let selected = ""
     Object.keys(checks).forEach(item => {
         if (checks[item]) {
@@ -17,4 +18,4 @@ export const BtnContent = ({ checks }) => {
         return null
     }
 
-}
+})

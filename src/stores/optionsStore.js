@@ -25,7 +25,7 @@ class OptionsStore {
         "Il/Elle/On": false,
         "Nous": false,
         "Vous": false,
-        "Ils/Elles": false,
+        "Ils/Elles/Ons": false,
     }
     
 
@@ -88,8 +88,8 @@ class OptionsStore {
     }
 
     getSelectedAmount() {
-        const num = Object.keys(this.numWords).filter(option => this.numWords[option])
-        return num
+        const num = Object.keys(this.numWords).filter(option => this.numWords[option])[0]
+        return parseInt(num)
     }
 }
 

@@ -30,13 +30,13 @@ class OptionsStore {
     
 
     selectionOfVerbs = {
-        "All verbs": false,
+        "All verbs": true,
         "Most common verbs": false,
     }
     
 
     numWords = {
-        "10": false,
+        "10": true,
         "20": false,
         "40": false,
         "100": false,
@@ -58,6 +58,10 @@ class OptionsStore {
             case "PRONOUNS":
                 this.pronouns[cbID] = !this.pronouns[cbID]
                 break
+            case "VERBS":
+                this.selectionOfVerbs = Object.fromEntries(Object.keys(this.selectionOfVerbs).map(verb => verb === cbID ? [verb, true] : [verb, false]))
+            case "AMOUNT":
+                this.numWords = Object.fromEntries(Object.keys(this.numWords).map(num => num === cbID ? [num, true] : [num, false]))
             default:
                 break
         }

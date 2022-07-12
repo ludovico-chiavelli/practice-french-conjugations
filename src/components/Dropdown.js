@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite"
 
 import { Checkbox } from "./";
 
-export const Dropdown = observer(({ type, options, checks, show, onClick}) => {
+export const Dropdown = observer(({ type, options, checks, onClick}) => {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 640)
 
     const items = options.map((item) => 
@@ -22,7 +22,7 @@ export const Dropdown = observer(({ type, options, checks, show, onClick}) => {
     }
 
     const chooseMenu = () => {
-        if (show && isDesktop) {
+        if (isDesktop) {
             return(
                 <div className="absolute h-40 w-full z-10 mt-2 rounded-md bg-[#EDDDD4] drop-shadow-lg overflow-y-scroll ring-1">
                     {items}

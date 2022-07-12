@@ -25,11 +25,11 @@ export const Options = () => {
             </div>
             <div className="mt-10">
                 <h3>Verbs</h3>
-                <SelectBtn options={Object.keys(drillOptions.selectionOfVerbs)}/>
+                <SelectBtn type="VERBS" options={Object.keys(drillOptions.selectionOfVerbs)}/>
             </div>
             <div className="my-10">
                 <h3>Length</h3>
-                <SelectBtn options={Object.keys(drillOptions.numWords)}/>
+                <SelectBtn type="AMOUNT" options={Object.keys(drillOptions.numWords)}/>
             </div>
             <Link to="/exercise" onClick={handleClick}>Start drill</Link>
         </section>

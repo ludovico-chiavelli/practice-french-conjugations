@@ -62,6 +62,31 @@ class OptionsStore {
                 break
         }
     }
+
+    getSelectedTenses() {
+        const sTenses = Object.keys(this.tenses).filter(tense => this.tenses[tense])
+        return sTenses
+    }
+
+    getSelectedCategories() {
+        const sCategories = Object.keys(this.categories).filter(category => this.categories[category])
+        return sCategories
+    }
+
+    getSelectedPronouns() {
+        const sPronouns = Object.keys(this.pronouns).filter(pronoun => this.pronouns[pronoun])
+        return sPronouns
+    }
+
+    getSelectedVerbs() {
+        const sVerbs = Object.keys(this.selectionOfVerbs).filter(option => this.selectionOfVerbs[option])
+        return sVerbs
+    }
+
+    getSelectedAmount() {
+        const num = Object.keys(this.numWords).filter(option => this.numWords[option])
+        return num
+    }
 }
 
 const drillOptions = new OptionsStore()

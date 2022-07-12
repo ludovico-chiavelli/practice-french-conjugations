@@ -25,18 +25,18 @@ class OptionsStore {
         "Il/Elle/On": false,
         "Nous": false,
         "Vous": false,
-        "Ils/Elles": false,
+        "Ils/Elles/Ons": false,
     }
     
 
     selectionOfVerbs = {
-        "All verbs": false,
+        "All verbs": true,
         "Most common verbs": false,
     }
     
 
     numWords = {
-        "10": false,
+        "10": true,
         "20": false,
         "40": false,
         "100": false,
@@ -58,9 +58,38 @@ class OptionsStore {
             case "PRONOUNS":
                 this.pronouns[cbID] = !this.pronouns[cbID]
                 break
+            case "VERBS":
+                this.selectionOfVerbs = Object.fromEntries(Object.keys(this.selectionOfVerbs).map(verb => verb === cbID ? [verb, true] : [verb, false]))
+            case "AMOUNT":
+                this.numWords = Object.fromEntries(Object.keys(this.numWords).map(num => num === cbID ? [num, true] : [num, false]))
             default:
                 break
         }
+    }
+
+    getSelectedTenses() {
+        const sTenses = Object.keys(this.tenses).filter(tense => this.tenses[tense])
+        return sTenses
+    }
+
+    getSelectedCategories() {
+        const sCategories = Object.keys(this.categories).filter(category => this.categories[category])
+        return sCategories
+    }
+
+    getSelectedPronouns() {
+        const sPronouns = Object.keys(this.pronouns).filter(pronoun => this.pronouns[pronoun])
+        return sPronouns
+    }
+
+    getSelectedVerbs() {
+        const sVerbs = Object.keys(this.selectionOfVerbs).filter(option => this.selectionOfVerbs[option])
+        return sVerbs
+    }
+
+    getSelectedAmount() {
+        const num = Object.keys(this.numWords).filter(option => this.numWords[option])[0]
+        return parseInt(num)
     }
 }
 

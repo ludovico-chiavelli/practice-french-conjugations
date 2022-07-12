@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { observer } from "mobx-react-lite";
 
-export const SelectBtn = ({ options }) => {
-    const [sValue, setSValue] = useState(options[0])
+import { OptionsContext } from "../App";
 
-    const handleClick = (option) => {
-        setSValue(option)
-    }
+export const SelectBtn = observer(({ type, options: optionsList }) => {
+    const drillOptions = useContext(OptionsContext)
+    const options = type === "VERBS" ? drillOptions.selectionOfVerbs : drillOptions.numWords
+    const sValue = Object.keys(options).filter(item => options[item])
 
-    const items = options.map((option) => <option value={option} onClick={() => handleClick(option)}>{option}</option>)
+    const items = optionsList.map((option) => <option value={option} onClick={() => drillOptions.selectOptions(type, option)}>{option}</option>)
 
     return(
         <select value={sValue} className="h-12 w-56 ring-2 ring-[#197278]/30 rounded-md px-4 py-2 bg-inherit">
             {items}
         </select>
     )
-}
+})

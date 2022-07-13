@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 import checkAnswer from "../utils/checkAnswer";
 
@@ -6,13 +7,14 @@ export const DisplayExercise = ({exercises}) => {
     const [value, setValue] = useState('')
     const [execIndex, setExecIndex] = useState(0)
     const [pass, setPass] = useState(null)
-
+    const [completed, setCompleted] = useState(false)
+    
     const handleKeyPress = (e) => {
         if(e.key === "Enter"){
             if(!checkAnswer(exercises[execIndex].conjugatedVerb, value)) {
                 setPass("Incorrect answer, try again")
             } else {
-                execIndex < exercises.length - 1 ? setExecIndex(execIndex + 1) : setExecIndex(0)
+                execIndex < exercises.length - 1 ? setExecIndex(execIndex + 1) : handleCompletion()
                 setValue('')
                 setPass(null)
             }
@@ -20,9 +22,14 @@ export const DisplayExercise = ({exercises}) => {
         }
       }
     
-      const handleChange = (e) => {
+    const handleChange = (e) => {
         setValue(e.target.value)
-      }
+    }
+
+    const handleCompletion = () => {
+        setCompleted(true)
+    }
+
 
     return(
         <div className="grid grid-cols-3 grid-rows-3 text-center text-lg">
@@ -41,7 +48,7 @@ export const DisplayExercise = ({exercises}) => {
             <div className="col-start-3 col-span-1 row-start-2 row-span-1 text-start pl-2">
                 <span className="pl-2 text-start">({exercises[execIndex].verbToConjugate})</span>
             </div>
-            { console.log(exercises[execIndex].conjugatedVerb)}
+            { completed && <Redirect to="/results"/>}
         </div>
     )
 }

@@ -10,10 +10,11 @@ export const DisplayExercise = ({exercises}) => {
     const handleKeyPress = (e) => {
         if(e.key === "Enter"){
             if(!checkAnswer(exercises[execIndex].conjugatedVerb, value)) {
-                setPass(<span>Incorrect answer, try again</span>)
+                setPass("Incorrect answer, try again")
             } else {
                 execIndex < exercises.length - 1 ? setExecIndex(execIndex + 1) : setExecIndex(0)
                 setValue('')
+                setPass(null)
             }
 
         }
@@ -33,8 +34,8 @@ export const DisplayExercise = ({exercises}) => {
             <div className="col-start-2 col-span-1 row-start-2 row-span-1">
                 <input className="max-w-full" value={value} onChange={handleChange} type="text" onKeyDown={handleKeyPress}/>
             </div>
-            <div className="col-start-2 col-end-3 row-start-3 row-span-1">
-                { pass }
+            <div className="col-start-1 col-span-3 row-start-3 row-span-1">
+                <span className="text-center">{ pass }</span>
             </div>
 
             <div className="col-start-3 col-span-1 row-start-2 row-span-1 text-start pl-2">

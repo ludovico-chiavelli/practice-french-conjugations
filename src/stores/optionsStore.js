@@ -9,7 +9,7 @@ class OptionsStore {
         "Pluperfect": false,
         "Conditional Present": false,
         "Present Subjunctive": false,
-        "Imperect Subjunctive": false
+        "Imperfect Subjunctive": false
     }
 
     categories = {
@@ -60,8 +60,10 @@ class OptionsStore {
                 break
             case "VERBS":
                 this.selectionOfVerbs = Object.fromEntries(Object.keys(this.selectionOfVerbs).map(verb => verb === cbID ? [verb, true] : [verb, false]))
+                break
             case "AMOUNT":
                 this.numWords = Object.fromEntries(Object.keys(this.numWords).map(num => num === cbID ? [num, true] : [num, false]))
+                break
             default:
                 break
         }

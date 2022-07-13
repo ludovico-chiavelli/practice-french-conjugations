@@ -20,11 +20,18 @@ export const DisplayExercise = ({exercises}) => {
       }
 
     return(
-        <div>
-            <div className="text-center">{currExec.tense}</div>
-                <div className="flex justify-center">
-                <span>{currExec.pronoun}</span>
+        <div className="flex justify-center">
+            <div className="grow flex flex-col justify-end">
+                <span className="pr-2 text-end">{currExec.pronoun}</span>
+            </div>
+            <div className="grow-0 text-center">
+                <div>
+                    {currExec.tense}
+                </div>
                 <input value={value} onChange={handleChange} type="text" onKeyDown={handleKeyPress}/>
+            </div>
+            <div className="grow flex flex-col justify-end">
+                <span className="pl-2 text-start">({currExec.verb})</span>
             </div>
         </div>
     )

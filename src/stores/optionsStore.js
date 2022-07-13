@@ -9,7 +9,7 @@ class OptionsStore {
         "Pluperfect": false,
         "Conditional Present": false,
         "Present Subjunctive": false,
-        "Imperect Subjunctive": false
+        "Imperfect Subjunctive": false
     }
 
     categories = {

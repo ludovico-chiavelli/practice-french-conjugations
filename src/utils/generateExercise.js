@@ -42,7 +42,8 @@ const generateExercises = (selectedOptions) => {
         let exercise = {
             tense: ranTense,
             pronoun: ranPronoun,
-            verb: conjVerb[pronounIndeces[ranPronoun]]["verb"]
+            verbToConjugate: ranVerb,
+            conjugatedVerb: conjVerb[pronounIndeces[ranPronoun]]["verb"]
         }
 
         generatedList.push(exercise)

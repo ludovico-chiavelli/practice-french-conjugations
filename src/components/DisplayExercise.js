@@ -7,18 +7,21 @@ export const DisplayExercise = ({exercises}) => {
     const [value, setValue] = useState('')
     const [execIndex, setExecIndex] = useState(0)
     const [pass, setPass] = useState(null)
+    const [attempt, setAttempt] = useState(1)
     const [completed, setCompleted] = useState(false)
     
     const handleKeyPress = (e) => {
-        if(e.key === "Enter"){
+        if(e.key === "Enter" && attempt === 1){
             if(!checkAnswer(exercises[execIndex].conjugatedVerb, value)) {
-                setPass("Incorrect answer, try again")
+                setPass(exercises[execIndex].conjugatedVerb)
+                setAttempt(2)
             } else {
-                execIndex < exercises.length - 1 ? setExecIndex(execIndex + 1) : handleCompletion()
-                setValue('')
-                setPass(null)
+                handleContinue()
             }
 
+        } else if (e.key === "Enter" && attempt === 2) {
+            setAttempt(1)
+            handleContinue()
         }
       }
     
@@ -28,6 +31,12 @@ export const DisplayExercise = ({exercises}) => {
 
     const handleCompletion = () => {
         setCompleted(true)
+    }
+
+    const handleContinue = () => {
+        setPass(null)
+        setValue('')
+        execIndex < exercises.length - 1 ? setExecIndex(execIndex + 1) : handleCompletion()
     }
 
 

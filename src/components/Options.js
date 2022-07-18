@@ -25,7 +25,13 @@ export const Options = () => {
                 <h3>Length</h3>
                 <SelectBtn type="AMOUNT" options={Object.keys(drillOptions.numWords)}/>
             </div>
-            <Link to="/exercise">Start drill</Link>
+            <div className="flex justify-center mb-5">
+                <Link to="/exercise">
+                    <button type="button" className="rounded-md bg-[#197278] text-[#EDDDD4] text-2xl py-1 px-2">
+                        Start drill
+                    </button>
+                </Link>
+            </div>
         </section>
     )
 }

@@ -41,22 +41,21 @@ export const DisplayExercise = ({exercises}) => {
 
 
     return(
-        <div className="grid grid-cols-3 grid-rows-3 text-center text-lg">
-            <div className="col-start-1 col-span-1 row-start-2 row-span-1 text-end pr-2">{exercises[execIndex].pronoun}</div>
-
-            <div className="col-start-2 col-span-1 row-start-1 row-span-1">
+        <div className="space-y-2 text-xl sm:text-4xl">
+            <div className="text-center">
                 {exercises[execIndex].tense}
             </div>
-            <div className="col-start-2 col-span-1 row-start-2 row-span-1">
-                <input className="max-w-full" value={value} onChange={handleChange} type="text" onKeyDown={handleKeyPress}/>
-            </div>
-            <div className="col-start-1 col-span-3 row-start-3 row-span-1">
-                <span className="text-center">{ pass }</span>
+
+            <div className="flex">
+                <span className="grow text-right pr-2">{exercises[execIndex].pronoun}</span>
+                <input className="grow-0 px-2" style={{width: (exercises[execIndex].verbToConjugate.length + 4).toString() + "ch"}} value={value} onChange={handleChange} type="text" onKeyDown={handleKeyPress}/>
+                <span className="grow pl-2 text-start">({exercises[execIndex].verbToConjugate})</span>
             </div>
 
-            <div className="col-start-3 col-span-1 row-start-2 row-span-1 text-start pl-2">
-                <span className="pl-2 text-start">({exercises[execIndex].verbToConjugate})</span>
+            <div className="text-center">
+                { pass }
             </div>
+
             { completed && <Redirect to="/results"/>}
         </div>
     )

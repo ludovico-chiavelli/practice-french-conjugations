@@ -9,10 +9,10 @@ import { Navbar, Options, Exercise, Results } from "./"
 
 export const Container = () => {
     return(
-        <div className="h-full min-w-[400px] bg-[#283D3B]">
+        <div className="h-screen w-screen bg-[#283D3B]">
             <Navbar/>
             <div className="h-5/6 flex justify-center">
-                <div className="w-3/4  max-w-3xl mt-10 rounded-md flex justify-center items-center bg-[#EDDDD4] overflow-y-auto">
+                <div className="w-10/12 sm:max-w-3xl mt-5 sm:mt-10 rounded-md flex justify-center items-center bg-[#EDDDD4] overflow-y-auto">
                     <Switch>
                         <Route path="/results" component={Results}/>
                         <Route path="/exercise" component={Exercise}/>

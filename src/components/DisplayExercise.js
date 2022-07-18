@@ -41,7 +41,7 @@ export const DisplayExercise = ({exercises}) => {
 
 
     return(
-        <div className="space-y-2">
+        <div className="space-y-2 text-xl sm:text-4xl">
             <div className="text-center">
                 {exercises[execIndex].tense}
             </div>

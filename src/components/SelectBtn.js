@@ -11,7 +11,7 @@ export const SelectBtn = observer(({ type, options: optionsList }) => {
     const items = optionsList.map((option) => <option value={option} onClick={() => drillOptions.selectOptions(type, option)}>{option}</option>)
 
     return(
-        <select value={sValue} className="h-12 w-56 ring-2 ring-[#197278]/30 rounded-md px-4 py-2 bg-inherit">
+        <select value={sValue} className="h-12 w-full sm:w-56 ring-2 ring-[#197278]/30 rounded-md px-4 py-2 bg-inherit">
             {items}
         </select>
     )

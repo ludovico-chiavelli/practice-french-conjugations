@@ -10,7 +10,7 @@ export const Options = () => {
     const drillOptions = useContext(OptionsContext)
 
     return(
-        <section className="h-full w-4/5 md:max-w-4xl">
+        <section className="h-full w-5/6 sm:w-4/5 md:max-w-4xl">
             <div>
                 <h1 className="my-10 text-2xl font-bold text-center">Conjugation Drill</h1>
                 <PreferencesBtn type="TENSES" checks={drillOptions.tenses} options={Object.keys(drillOptions.tenses)}/>

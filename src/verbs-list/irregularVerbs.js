@@ -418,4 +418,6 @@ const irregularVerbs = [
     "vaincre",
     "vendre",
     "vêtir"
-  ]
+]
+
+export default irregularVerbs

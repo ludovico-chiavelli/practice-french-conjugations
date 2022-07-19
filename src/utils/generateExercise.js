@@ -1,24 +1,33 @@
 import { conjugate } from "conjugation-fr"
 import allVerbs from "../verbs-list/allVerbs"
 
+import irregularVerbs from "../verbs-list/irregularVerbs"
+
 const generateExercises = (selectedOptions) => {
     const sTenses = selectedOptions.getSelectedTenses()
-    // const sCategories= selectedOptions.getSelectedCategories()
+    const sCategories= selectedOptions.getSelectedCategories()
     const sPronouns= selectedOptions.getSelectedPronouns()
     const sVerbs = selectedOptions.getSelectedVerbs()[0]
     const sNum = selectedOptions.getSelectedAmount()
+
+    const filtered = (verbList) => {
+        return verbList.filter((verb) => (
+            sCategories.includes("irregular") || !irregularVerbs.includes(verb)
+        )).filter((verb) => sCategories.includes(verb.slice(-2)))
+    }
 
     let verbPool = null
 
     switch(sVerbs){
         case "All verbs":
-            verbPool = allVerbs
+            verbPool = filtered(allVerbs)
             break
         case "Most common verbs":
             break
         default:
             break
     }
+
 
     const pronounIndeces = {
         'je': 0,

@@ -8,8 +8,8 @@ export const ErrorMsg = ({ show, setShow}) => {
     }, [show, setShow])
 
     return(
-        <div>
-            "Please select something for all options"
-        </div>
+        <span className="text-base">
+            Please select something for all options
+        </span>
     )
 }

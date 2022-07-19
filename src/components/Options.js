@@ -40,12 +40,17 @@ export const Options = () => {
                 <SelectBtn type="AMOUNT" options={Object.keys(drillOptions.numWords)}/>
             </div>
             <div className="flex justify-center mb-5">
-                <button type="button" className="rounded-md bg-[#197278] text-[#EDDDD4] text-2xl py-1 px-2" onClick={handleClick}>
-                    Start drill
-                </button>
+                { showError ?
+                    <button type="button" className="rounded-md bg-[#ff0c0c] text-[#EDDDD4] text-2xl py-1 px-2" onClick={handleClick}>
+                        { <ErrorMsg show={showError} setShow={setShowError}/> }
+                    </button> :
+                    <button type="button" className="rounded-md bg-[#197278] text-[#EDDDD4] text-2xl py-1 px-2" onClick={handleClick}>
+                        { "Start drill" }
+                    </button>
+
+                }
             </div>
             { start && <Redirect to="/exercise"/>}
-            { showError && <ErrorMsg show={showError} setShow={setShowError}/>}
         </section>
     )
 }

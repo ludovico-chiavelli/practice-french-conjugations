@@ -13,10 +13,10 @@ class OptionsStore {
     }
 
     categories = {
-        "Regular ER": false,
-        "Regular IR": false,
-        "Regular RE": false,
-        "Stem-changing and Irregular": false,
+        "er": false,
+        "ir": false,
+        "re": false,
+        "irregular": false,
     }
 
     pronouns = {

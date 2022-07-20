@@ -16,11 +16,11 @@ export const PreferencesBtn = observer(({ type, checks, options }) => {
         setListening(true);
         [`click`, `touchstart`].forEach((type) => {
           document.addEventListener(`click`, (evt) => {
-            if (menuRef.current.contains(evt.target)) return;
+            if (menuRef.current && menuRef.current.contains(evt.target)) return;
             setIsOpen(false);
           });
         });
-      }, [ listening ])
+      }, [ listening, menuRef ])
 
     const handleClick = () => {
         setIsOpen(!isOpen)

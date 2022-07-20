@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
 
 import checkAnswer from "../utils/checkAnswer";
 
-export const DisplayExercise = ({exercises}) => {
+import { StatsContext } from "../App";
+import { observer } from "mobx-react-lite";
+
+export const DisplayExercise = observer(({exercises}) => {
+    const stats = useContext(StatsContext)
     const [value, setValue] = useState('')
     const [execIndex, setExecIndex] = useState(0)
     const [pass, setPass] = useState(null)
@@ -34,6 +38,7 @@ export const DisplayExercise = ({exercises}) => {
     }
 
     const handleContinue = () => {
+        stats.setResponse(execIndex, value, checkAnswer(exercises[execIndex].conjugatedVerb, value))
         setPass(null)
         setValue('')
         execIndex < exercises.length - 1 ? setExecIndex(execIndex + 1) : handleCompletion()
@@ -59,4 +64,4 @@ export const DisplayExercise = ({exercises}) => {
             { completed && <Redirect to="/results"/>}
         </div>
     )
-}
+})

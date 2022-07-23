@@ -1,7 +1,7 @@
 import { conjugate } from "conjugation-fr"
 import allVerbs from "../verbs-list/allVerbs"
-
 import irregularVerbs from "../verbs-list/irregularVerbs"
+import mostCommonVerbs from "../verbs-list/mostCommonVerbs"
 
 const generateExercises = (selectedOptions) => {
     const sTenses = selectedOptions.getSelectedTenses()
@@ -23,6 +23,7 @@ const generateExercises = (selectedOptions) => {
             verbPool = filtered(allVerbs)
             break
         case "Most common verbs":
+            verbPool = filtered(mostCommonVerbs)
             break
         default:
             break

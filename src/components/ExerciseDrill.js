@@ -5,7 +5,7 @@ import { OptionsContext, StatsContext } from "../App";
 import generateExercises from "../utils/generateExercise";
 import { DisplayExercise } from "./DisplayExercise";
 
-export const Exercise = () => {
+export const ExerciseDrill = () => {
   const drillOptions = useContext(OptionsContext)
   const stats = useContext(StatsContext)
   const exercises = generateExercises(drillOptions)

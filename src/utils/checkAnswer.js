@@ -1,5 +1,9 @@
 const checkAnswer = (ans, res) => {
-    return ans.toLowerCase().includes(res.toLowerCase())
+    if (ans.includes("/")) {
+        return ans.toLowerCase().includes(res.toLowerCase())
+    } else {
+        return ans.toLowerCase() === res.toLowerCase()
+    }
 }
 
 export default checkAnswer

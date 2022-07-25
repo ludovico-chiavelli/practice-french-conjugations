@@ -50,7 +50,7 @@ export const Options = () => {
 
                 }
             </div>
-            { start && <Redirect to="/exercise"/>}
+            { start && <Redirect to="/exerciseDrill"/>}
         </section>
     )
 }

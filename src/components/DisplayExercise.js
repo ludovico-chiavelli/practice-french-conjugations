@@ -13,6 +13,7 @@ export const DisplayExercise = observer(({exercise, pass, handleKeyPress}) => {
 
     useEffect(() => {
         setValue('')
+        document.getElementById("input").focus()
     }, [exercise])
 
     return(
@@ -24,7 +25,7 @@ export const DisplayExercise = observer(({exercise, pass, handleKeyPress}) => {
 
                 <div className="flex">
                     <span className="grow text-right pr-2">{exercise.pronoun}</span>
-                    <input className="grow-0 px-2" style={{width: (exercise.verbToConjugate.length + 4).toString() + "ch"}} value={value} onChange={handleChange} type="text" onKeyDown={handleKeyPress}/>
+                    <input id="input" className="grow-0 px-2" style={{width: (exercise.verbToConjugate.length + 4).toString() + "ch"}} value={value} onChange={handleChange} type="text" onKeyDown={handleKeyPress}/>
                     <span className="grow pl-2 text-start">({exercise.verbToConjugate})</span>
                 </div>
 

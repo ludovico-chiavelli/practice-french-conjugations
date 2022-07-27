@@ -31,10 +31,10 @@ export const DisplayExercise = observer(({exercise, pass, handleKeyPress}) => {
                     {exercise.tense}
                 </div>
 
-                <div className="flex">
-                    <span className="grow text-right pr-2">{determinePronoun(exercise)}</span>
+                <div className="flex justify-center flex-wrap">
+                    <span className="text-right pr-2">{determinePronoun(exercise)}</span>
                     <input id="input" className="grow-0 px-2" style={{width: (exercise.verbToConjugate.length + 4).toString() + "ch"}} value={value} onChange={handleChange} type="text" onKeyDown={handleKeyPress}/>
-                    <span className="grow pl-2 text-start">({exercise.verbToConjugate})</span>
+                    <span className="pl-2 text-start">({exercise.verbToConjugate})</span>
                 </div>
 
                 <div className="text-center">
